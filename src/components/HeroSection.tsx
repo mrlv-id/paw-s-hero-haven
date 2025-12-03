@@ -186,9 +186,53 @@ const HeroSection = () => {
             </div>
           </div>
         </main>
+
+        {/* Sponsors Slider */}
+        <footer className="flex-shrink-0 animate-[fadeUp_0.6s_ease-out_1.2s_both] border-t border-white/10 bg-black/30 backdrop-blur-sm">
+          <div className="py-4 sm:py-5">
+            <p className="mb-3 text-center text-xs text-white/50 sm:mb-4 sm:text-sm">
+              Parceiros e Patrocinadores
+            </p>
+            <div className="relative overflow-hidden">
+              {/* Gradient masks */}
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black/50 to-transparent sm:w-24" />
+              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black/50 to-transparent sm:w-24" />
+              
+              {/* Scrolling container */}
+              <div className="flex animate-scroll">
+                {[...Array(2)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex shrink-0">
+                    {sponsors.map((sponsor, index) => (
+                      <div
+                        key={`${setIndex}-${index}`}
+                        className="mx-6 flex items-center gap-2 text-white/60 transition-all duration-300 hover:text-white sm:mx-8"
+                      >
+                        <span className="text-lg font-bold sm:text-xl">{sponsor.icon}</span>
+                        <span className="whitespace-nowrap text-sm font-medium sm:text-base">
+                          {sponsor.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
 };
+
+const sponsors = [
+  { name: "PetShop Plus", icon: "🐾" },
+  { name: "Royal Canin", icon: "👑" },
+  { name: "Whiskas", icon: "🐱" },
+  { name: "Cat Chow", icon: "🍽️" },
+  { name: "Pedigree", icon: "⭐" },
+  { name: "PetLove", icon: "❤️" },
+  { name: "Cobasi", icon: "🏪" },
+  { name: "Zee.Dog", icon: "🦴" },
+];
 
 export default HeroSection;
