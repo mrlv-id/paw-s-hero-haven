@@ -34,7 +34,7 @@ const HeroSection = () => {
       {/* Content wrapper - flex column to distribute space */}
       <div className="relative z-10 flex h-full flex-col">
         {/* Header */}
-        <header className="flex-shrink-0">
+        <header className="flex-shrink-0 animate-[fadeDown_0.6s_ease-out]">
           <nav
             data-state={menuState && "active"}
             className="group w-full border-b border-dashed border-white/10 bg-black/20 backdrop-blur-xl"
@@ -89,7 +89,7 @@ const HeroSection = () => {
 
               {/* Mobile Navigation */}
               {menuState && (
-                <div className="border-t border-white/10 py-3 lg:hidden">
+                <div className="animate-[fadeIn_0.3s_ease-out] border-t border-white/10 py-3 lg:hidden">
                   <ul className="space-y-3">
                     {menuItems.map((item, index) => (
                       <li key={index}>
@@ -123,7 +123,7 @@ const HeroSection = () => {
               {/* Badge */}
               <a
                 href="#"
-                className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 p-1 pr-2.5 backdrop-blur-sm sm:gap-2 sm:pr-3"
+                className="inline-flex w-fit animate-[fadeUp_0.6s_ease-out_0.2s_both] items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 p-1 pr-2.5 backdrop-blur-sm sm:gap-2 sm:pr-3"
               >
                 <span className="rounded-md bg-paw-orange px-1.5 py-0.5 text-[10px] font-semibold text-white sm:px-2 sm:py-1 sm:text-xs">
                   Novo
@@ -134,7 +134,7 @@ const HeroSection = () => {
               </a>
 
               {/* Heading */}
-              <h1 className="mt-4 text-balance text-2xl font-bold text-white sm:mt-6 sm:text-3xl md:text-4xl lg:mt-8 lg:text-5xl">
+              <h1 className="mt-4 animate-[fadeUp_0.6s_ease-out_0.4s_both] text-balance text-2xl font-bold text-white sm:mt-6 sm:text-3xl md:text-4xl lg:mt-8 lg:text-5xl">
                 Tudo sobre{" "}
                 <span className="bg-gradient-to-r from-paw-orange to-paw-peach bg-clip-text text-transparent">
                   gatos
@@ -143,14 +143,14 @@ const HeroSection = () => {
               </h1>
 
               {/* Description */}
-              <p className="mt-3 text-sm text-white/80 sm:mt-4 sm:text-base lg:mt-6">
+              <p className="mt-3 animate-[fadeUp_0.6s_ease-out_0.6s_both] text-sm text-white/80 sm:mt-4 sm:text-base lg:mt-6">
                 Descubra dicas, histórias encantadoras e tudo que você precisa saber
                 para cuidar do seu felino com muito amor e carinho.
               </p>
 
               {/* Email Form */}
-              <form action="" className="mt-4 max-w-sm sm:mt-6 lg:mt-8">
-                <div className="relative grid grid-cols-[1fr_auto] items-center rounded-xl border border-white/20 bg-white/10 pr-1 shadow backdrop-blur-sm has-[input:focus]:ring-2 has-[input:focus]:ring-paw-orange/30 sm:rounded-2xl">
+              <form action="" className="mt-4 max-w-sm animate-[fadeUp_0.6s_ease-out_0.8s_both] sm:mt-6 lg:mt-8">
+                <div className="relative grid grid-cols-[1fr_auto] items-center rounded-xl border border-white/20 bg-white/10 pr-1 shadow backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/15 has-[input:focus]:ring-2 has-[input:focus]:ring-paw-orange/30 sm:rounded-2xl">
                   <Mail className="pointer-events-none absolute inset-y-0 left-3 my-auto size-4 text-white/60 sm:left-4 sm:size-5" />
 
                   <input
@@ -160,7 +160,7 @@ const HeroSection = () => {
                   />
 
                   <div>
-                    <Button aria-label="submit" size="sm" className="h-8 rounded-lg px-3 sm:h-10 sm:rounded-xl sm:px-4 lg:h-12">
+                    <Button aria-label="submit" size="sm" className="h-8 rounded-lg px-3 transition-transform duration-200 hover:scale-105 sm:h-10 sm:rounded-xl sm:px-4 lg:h-12">
                       <span className="hidden text-sm md:block">Inscrever-se</span>
                       <SendHorizonal
                         className="relative mx-auto size-4 md:hidden"
@@ -172,14 +172,14 @@ const HeroSection = () => {
               </form>
 
               {/* Stats */}
-              <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70 sm:mt-6 sm:gap-6 sm:text-sm lg:mt-8">
-                <div>
+              <div className="mt-4 flex animate-[fadeUp_0.6s_ease-out_1s_both] flex-wrap gap-4 text-xs text-white/70 sm:mt-6 sm:gap-6 sm:text-sm lg:mt-8">
+                <div className="transition-transform duration-200 hover:scale-105">
                   <span className="font-bold text-white">500+</span> Artigos
                 </div>
-                <div>
+                <div className="transition-transform duration-200 hover:scale-105">
                   <span className="font-bold text-white">100+</span> Raças
                 </div>
-                <div>
+                <div className="transition-transform duration-200 hover:scale-105">
                   <span className="font-bold text-white">50k+</span> Leitores
                 </div>
               </div>
