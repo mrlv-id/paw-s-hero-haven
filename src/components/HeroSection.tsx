@@ -36,57 +36,79 @@ const HeroSection = () => {
           data-state={menuState && "active"}
           className="group w-full border-b border-dashed border-white/10 bg-black/20 backdrop-blur-xl"
         >
-          <div className="m-auto max-w-5xl px-6">
-            <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-              <div className="flex w-full justify-between lg:w-auto">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex h-16 items-center justify-between">
+              {/* Logo */}
+              <div className="flex-shrink-0">
                 <Link to="/" aria-label="home" className="flex items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-paw-orange to-paw-peach shadow-warm">
-                    <Cat className="h-6 w-6 text-white" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-paw-orange to-paw-peach shadow-warm">
+                    <Cat className="h-5 w-5 text-white" />
                   </div>
-                  <span className="text-2xl font-extrabold text-white">Paw</span>
+                  <span className="text-xl font-extrabold text-white">Paw</span>
                 </Link>
-
-                <button
-                  onClick={() => setMenuState(!menuState)}
-                  aria-label={menuState ? "Fechar Menu" : "Abrir Menu"}
-                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                >
-                  <Menu className="m-auto size-6 text-white duration-200 group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0" />
-                  <X className="absolute inset-0 m-auto size-6 -rotate-180 scale-0 text-white opacity-0 duration-200 group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100" />
-                </button>
               </div>
 
-              <div className="mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-white/10 bg-black/60 p-6 shadow-2xl backdrop-blur-xl group-data-[state=active]:block md:flex-nowrap lg:group-data-[state=active]:flex lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
-                <div className="lg:pr-4">
-                  <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
-                    {menuItems.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href={item.href}
-                          className="block text-white/70 duration-150 hover:text-white"
-                        >
-                          <span>{item.name}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex lg:items-center lg:gap-6">
+                <ul className="flex items-center gap-6 text-sm">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.href}
+                        className="whitespace-nowrap text-white/70 duration-150 hover:text-white"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
 
-                <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:border-white/20 lg:pl-6">
+                <div className="flex items-center gap-2 border-l border-white/20 pl-6">
                   <Button asChild variant="outline" size="sm" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
-                    <a href="#">
-                      <span>Login</span>
-                    </a>
+                    <a href="#">Login</a>
                   </Button>
-
                   <Button asChild size="sm">
-                    <a href="#">
-                      <span>Inscreva-se</span>
-                    </a>
+                    <a href="#">Inscreva-se</a>
                   </Button>
                 </div>
               </div>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState ? "Fechar Menu" : "Abrir Menu"}
+                className="relative z-20 block p-2 lg:hidden"
+              >
+                <Menu className={`size-6 text-white transition-all duration-200 ${menuState ? 'rotate-180 scale-0 opacity-0' : ''}`} />
+                <X className={`absolute inset-0 m-auto size-6 text-white transition-all duration-200 ${menuState ? 'rotate-0 scale-100 opacity-100' : '-rotate-180 scale-0 opacity-0'}`} />
+              </button>
             </div>
+
+            {/* Mobile Navigation */}
+            {menuState && (
+              <div className="border-t border-white/10 py-4 lg:hidden">
+                <ul className="space-y-4">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.href}
+                        className="block text-white/70 duration-150 hover:text-white"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 flex flex-col gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
+                    <a href="#">Login</a>
+                  </Button>
+                  <Button asChild size="sm">
+                    <a href="#">Inscreva-se</a>
+                  </Button>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
       </header>
