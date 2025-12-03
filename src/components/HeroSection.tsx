@@ -28,8 +28,8 @@ const HeroSection = () => {
         Seu navegador não suporta vídeos.
       </video>
 
-      {/* Dark Overlay for contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40" />
+      {/* Overlay matching video tones */}
+      <div className="absolute inset-0 bg-gradient-to-r from-amber-950/80 via-amber-900/50 to-amber-800/20" />
 
       <header className="relative z-20">
         <nav
