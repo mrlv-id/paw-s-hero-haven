@@ -93,12 +93,12 @@ const HeroSection = () => {
 
       <main className="relative z-10">
         <section className="overflow-hidden">
-          <div className="relative mx-auto max-w-5xl px-6 py-28 lg:py-32">
-            <div className="lg:flex lg:items-center lg:gap-12">
-              <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
+          <div className="relative px-6 py-28 lg:px-12 lg:py-32">
+            <div className="max-w-xl">
+              <div className="relative z-10 text-left">
                 <a
                   href="#"
-                  className="mx-auto flex w-fit items-center gap-2 rounded-lg border border-primary/30 bg-background/50 p-1 pr-3 backdrop-blur-sm lg:ml-0"
+                  className="flex w-fit items-center gap-2 rounded-lg border border-primary/30 bg-background/50 p-1 pr-3 backdrop-blur-sm"
                 >
                   <span className="rounded-md bg-primary px-2 py-1 text-xs font-semibold text-primary-foreground">
                     Novo
@@ -121,7 +121,7 @@ const HeroSection = () => {
                 </p>
 
                 <div>
-                  <form action="" className="mx-auto my-10 max-w-sm lg:my-12 lg:ml-0 lg:mr-auto">
+                  <form action="" className="my-10 max-w-sm lg:my-12">
                     <div className="relative grid grid-cols-[1fr_auto] items-center rounded-2xl border border-primary/30 bg-background/70 pr-1 shadow shadow-foreground/5 backdrop-blur-sm has-[input:focus]:ring-2 has-[input:focus]:ring-primary/20">
                       <Mail className="pointer-events-none absolute inset-y-0 left-5 my-auto size-5 text-foreground/60" />
 
